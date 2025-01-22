@@ -101,6 +101,7 @@ de: {
   }
 };
 
+/** Lädt den State aus localStorage (falls vorhanden) */
 export function loadStateFromLocalStorage() {
   const storedData = JSON.parse(localStorage.getItem('ganttData')) || {};
   tasks = storedData.tasks || [];
