@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projektmanager</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- html2canvas zur PNG-Erzeugung (für den Chart-Export) -->
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+</head>
+<body class="theme-light"><!-- Standard: Light Theme -->
+  <h1 id="title">Projektmanager</h1>
+
+  <!-- Formular zur Eingabe neuer Aufgaben -->
+  <div class="form-container">
+    <label id="labelProject" for="project">Projekt:</label>
+    <select id="project">
+      <option value="">Projekt auswählen oder eingeben</option>
+    </select>
+    <input type="text" id="newProject" placeholder="Neues Projekt eingeben" />
+    <input type="color" id="newProjectColor" value="#1e73be" title="Projektfarbe auswählen" />
+
+    <label id="labelTask" for="task">Aufgabe:</label>
+    <input type="text" id="task" placeholder="Aufgabe" />
+
+    <label id="labelStart" for="start">Startdatum:</label>
+    <input type="date" id="start" />
+
+    <label id="labelEnd" for="end">Enddatum:</label>
+    <input type="date" id="end" />
+
+    <button id="btnAddTask">Hinzufügen</button>
+  </div>
+
+  <!-- Aufgabenliste-Container -->
+  <div class="task-list-container">
+    <div class="task-list-header">
+      <h2 id="taskListHeading">Aufgabenliste</h2>
+      <button id="toggleTaskList">▲</button>
+    </div>
+    <div class="task-list" id="taskListWrapper">
+      <!-- Hier werden die Projekte (Gruppe) + Aufgaben generiert -->
+      <div id="tasksContainer"></div>
+    </div>
+  </div>
+
+  <!-- Gantt-Chart + Toggle -->
+  <div class="gantt-chart-container">
+    <div class="gantt-chart-header">
+      <h2 id="chartHeading">Gantt-Chart</h2>
+      <button id="toggleChart">▲</button>
+    </div>
+    <div class="gantt-chart" id="chartWrapper">
+      <!-- Kalenderzeilen -->
+      <div class="gantt-calendar" id="ganttCalendarMonths"></div>
+      <div class="gantt-calendar" id="ganttCalendarDays"></div>
+
+      <!-- Gantt-Balken -->
+      <div id="gantt"></div>
+      <!-- "Heute"-Linie -->
+      <div id="todayLine"></div>
+    </div>
+  </div>
+
+  <!-- Minimierbare Einstellungen -->
+  <div class="settings-container">
+    <div class="settings-header">
+      <h2 id="settingsHeading">Einstellungen</h2>
+      <button id="toggleSettings">▲</button>
+    </div>
+    <div class="settings-body" id="settingsBody">
+      <div class="theme-section">
+        <label id="themeLabel" for="themeSelect">Farbschema:</label>
+        <select id="themeSelect">
+          <option value="light">Hell</option>
+          <option value="dark">Dunkel</option>
+          <option value="muted">Gedeckt</option>
+        </select>
+      </div>
+
+      <div class="language-section">
+        <label id="languageLabel" for="languageSelect">Sprache:</label>
+        <select id="languageSelect">
+          <option value="de">Deutsch</option>
+          <option value="en">English</option>
+        </select>
+      </div>
+
+      <!-- Heute-Linienfarbe -->
+      <div class="todayline-section">
+        <label id="todayLineColorLabel" for="todayLineColorInput">Heute-Linienfarbe:</label>
+        <input type="color" id="todayLineColorInput" value="#FF0000" />
+      </div>
+
+      <!-- Resttage anzeigen -->
+      <div class="remainingdays-section">
+        <input type="checkbox" id="showRemainingDays" />
+        <label id="showRemainingDaysLabel" for="showRemainingDays">Verbleibende Tage anzeigen</label>
+      </div>
+
+      <!-- Gesamtzeit in Tagen anzeigen -->
+      <div class="totaldays-section">
+        <input type="checkbox" id="showTotalDays" checked />
+        <label id="showTotalDaysLabel" for="showTotalDays">Gesamtzeit in Tagen anzeigen</label>
+      </div>
+    </div>
+  </div>
+
+  <!-- Export-Buttons -->
+  <div class="export-buttons">
+    <button id="btnSaveTasks">Speichern</button>
+    <button id="btnSaveAs">Speichern unter...</button>
+    <button id="btnLoadTasks">Laden</button>
+    <button id="btnExportPNG">Chart als PNG</button>
+    <button id="btnClearAll">Neu</button>
+  </div>
+
+  <!-- Modal zur Bearbeitung einer Aufgabe -->
+  <div id="editModal" class="modal">
+    <div class="modal-content">
+      <span id="modalClose" class="close">&times;</span>
+      <h2 id="editModalTitle">Aufgabe bearbeiten</h2>
+
+      <label id="editLabelProjectName" for="editProjectName">Projekt:</label>
+      <input type="text" id="editProjectName" />
+
+      <label id="editLabelProjectColor" for="editProjectColor">Farbe:</label>
+      <input type="color" id="editProjectColor" />
+
+      <label id="editLabelTaskName" for="editTaskName">Aufgabe:</label>
+      <input type="text" id="editTaskName" />
+
+      <label id="editLabelStart" for="editStart">Startdatum:</label>
+      <input type="date" id="editStart" />
+
+      <label id="editLabelEnd" for="editEnd">Enddatum:</label>
+      <input type="date" id="editEnd" />
+
+      <!-- Versteckte ID für die Task-Identifikation -->
+      <input type="hidden" id="editTaskId" />
+
+      <button id="btnModalSave">Speichern</button>
+    </div>
+  </div>
+
+  <!-- Haupt-ES-Module (startet das Programm) -->
+  <script type="module" src="main.js"></script>
+</body>
+</html>

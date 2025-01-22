@@ -1,0 +1,423 @@
+/* =============================================
+   =         THEMES (Light/Dark/Muted)         =
+   ============================================= */
+
+/* Light Theme */
+body.theme-light {
+  background-color: #f8f9fa;
+  color: #343a40;
+}
+body.theme-light .form-container,
+body.theme-light .task-list-header,
+body.theme-light .task-list,
+body.theme-light .settings-container,
+body.theme-light .export-buttons,
+body.theme-light .modal-content,
+body.theme-light .gantt-chart,
+body.theme-light .gantt-chart-header {
+  background-color: #ffffff;
+  color: #343a40;
+}
+
+/* Dark Theme */
+body.theme-dark {
+  background-color: #2a2a2a;
+  color: #f8f8f8;
+}
+body.theme-dark .form-container,
+body.theme-dark .task-list-header,
+body.theme-dark .task-list,
+body.theme-dark .settings-container,
+body.theme-dark .export-buttons,
+body.theme-dark .modal-content,
+body.theme-dark .gantt-chart,
+body.theme-dark .gantt-chart-header {
+  background-color: #3a3a3a;
+  color: #f0f0f0;
+}
+body.theme-dark button {
+  background-color: #555 !important;
+  color: #fff !important;
+}
+body.theme-dark input,
+body.theme-dark select {
+  background-color: #555;
+  color: #fff;
+  border: 1px solid #666;
+}
+/* Monatszeile im Dark-Theme */
+body.theme-dark .gantt-month {
+  background-color: #444;
+  color: #fff;
+}
+/* Projekt-/Aufgaben-Namen hinterlegt mit #dee2e6 */
+body.theme-dark .label-project,
+body.theme-dark .label-task,
+body.theme-dark .project-header h3,
+body.theme-dark .project-tasks li span {
+  background-color: #dee2e6; 
+  border-radius: 3px;
+  padding: 2px 4px;
+  /* Der Text selbst kann in Projektfarbe bleiben (per inline style.color). */
+}
+
+/* Muted Theme */
+body.theme-muted {
+  background-color: #e0eae0;
+  color: #2a2a2a;
+}
+body.theme-muted .form-container,
+body.theme-muted .task-list-header,
+body.theme-muted .task-list,
+body.theme-muted .settings-container,
+body.theme-muted .export-buttons,
+body.theme-muted .modal-content,
+body.theme-muted .gantt-chart,
+body.theme-muted .gantt-chart-header {
+  background-color: #f0f6f0;
+  color: #2a2a2a;
+}
+body.theme-muted button {
+  background-color: #678f78 !important;
+  color: #f0f0f0 !important;
+}
+body.theme-muted input,
+body.theme-muted select {
+  background-color: #dfe5df;
+  color: #2a2a2a;
+  border: 1px solid #b2bcb2;
+}
+
+
+/* =============================================
+   =            BASIS-ELEMENTE                 =
+   ============================================= */
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+h1#title {
+  margin-bottom: 20px;
+}
+.task-list-header h2,
+.gantt-chart-header h2,
+.settings-container h2 {
+  font-size: 1.3em;
+  margin: 0.5em 0;
+}
+
+/* Form-Container */
+.form-container {
+  margin-bottom: 20px;
+  padding: 15px;
+  border: 1px solid #dee2e6;
+  border-radius: 5px;
+}
+.form-container label {
+  margin-right: 10px;
+}
+.form-container input,
+.form-container select {
+  margin-right: 10px;
+  padding: 5px;
+  border-radius: 3px;
+  border: 1px solid #ced4da;
+}
+.form-container button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  color: #fff;
+  background-color: #007bff;
+}
+.form-container button:hover {
+  background-color: #0056b3;
+}
+
+
+/* =============================================
+   =        AUFGABENLISTE                     =
+   ============================================= */
+
+.task-list-container {
+  margin-top: 20px;
+}
+.task-list-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #dee2e6;
+  border-radius: 5px 5px 0 0;
+  padding: 10px;
+}
+.task-list {
+  border: 1px solid #dee2e6;
+  border-top: none;
+  border-radius: 0 0 5px 5px;
+  padding: 0;
+}
+#tasksContainer {
+  margin: 0;
+  padding: 0;
+}
+/* Projektblöcke */
+.project-block {
+  border-top: 1px solid #dee2e6;
+  padding: 10px;
+}
+.project-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+.project-header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Zwischen Überschrift und Buttons */
+}
+.project-header-left h3 {
+  margin: 0;
+  font-size: 1.1em;
+}
+.project-tasks {
+  margin-left: 15px;
+}
+.project-tasks ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.project-tasks li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+  justify-content: flex-start;
+}
+.project-tasks li span {
+  text-align: left;
+  display: inline-block;
+  width: 100%;
+}
+.project-tasks li input[type="checkbox"] {
+  margin-right: 10px;
+}
+.project-tasks li button {
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-left: 5px;
+}
+.project-tasks li button:hover {
+  background-color: #bd2130;
+}
+.project-tasks li.completed span {
+  color: #999 !important;
+}
+
+
+/* =============================================
+   =        GANTT-CHART                        =
+   ============================================= */
+
+.gantt-chart-container {
+  margin-top: 20px;
+}
+.gantt-chart-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #dee2e6;
+  border-radius: 5px 5px 0 0;
+  padding: 10px;
+}
+.gantt-chart {
+  border: 1px solid #dee2e6;
+  border-top: none;
+  border-radius: 0 0 5px 5px;
+  padding: 10px;
+  box-sizing: border-box;
+  overflow-x: auto;
+  margin-bottom: 10px;
+  position: relative;
+}
+.gantt-calendar {
+  display: flex;
+  margin-bottom: 3px;
+  position: relative;
+  font-size: 12px;
+}
+.gantt-month {
+  background-color: #f0f0f0;
+  text-align: center;
+  border-right: 1px solid #ccc;
+  padding: 5px;
+  font-weight: bold;
+  font-size: 12px;
+}
+.gantt-day {
+  text-align: center;
+  flex: 1 0 auto;
+  min-width: 40px;
+  border-right: 1px solid #ccc;
+  padding: 5px 0;
+}
+.gantt-day:last-child {
+  border-right: none;
+}
+.gantt-group {
+  margin: 10px 0;
+  border-top: 1px solid #dee2e6;
+  padding-bottom: 10px; /* etwas Platz nach unten */
+}
+.gantt-group-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+  font-size: 1.1em;
+  font-weight: bold;
+}
+.gantt-group-header .gantt-project-title {
+  margin: 0;
+  background-color: transparent;
+  /* Schriftfarbe inline in JS */
+}
+.gantt-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+  /* Für die einzelnen Tasks */
+}
+.gantt-label {
+  flex: 0 0 180px;
+  margin-right: 10px;
+  overflow: hidden;
+  background-color: transparent;
+}
+.gantt-label .label-project {
+  font-weight: bold;
+  font-size: 14px;
+  display: block;
+  margin-bottom: 2px;
+}
+.gantt-label .label-task {
+  font-size: 13px;
+  display: block;
+}
+.gantt-bar {
+  position: relative;
+  height: 20px;
+  text-align: center;
+  color: white;
+  white-space: nowrap;
+  border-radius: 3px;
+}
+.gantt-bar.completed {
+  background-color: #bbb !important; /* hellgrau */
+}
+/* Heute-Linie (vertikale) */
+#todayLine {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  pointer-events: none;
+  display: none;
+}
+
+
+/* =============================================
+   =           SETTINGS + EXPORT-BUTTONS       =
+   ============================================= */
+.settings-container {
+  margin-top: 20px;
+}
+.settings-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #dee2e6;
+  border-radius: 5px 5px 0 0;
+  padding: 10px;
+}
+.settings-body {
+  border: 1px solid #dee2e6;
+  border-top: none;
+  border-radius: 0 0 5px 5px;
+  padding: 10px;
+}
+.theme-section, .language-section, .todayline-section, .remainingdays-section, .totaldays-section {
+  margin-bottom: 10px;
+}
+.settings-body label {
+  margin-right: 10px;
+}
+.export-buttons {
+  margin-top: 30px;
+  text-align: center;
+}
+.export-buttons button {
+  margin: 0 10px;
+  padding: 5px 15px;
+  background-color: #6c757d;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.export-buttons button:hover {
+  background-color: #5a6268;
+}
+
+/* =============================================
+   =           MODAL (Aufgabe + Projekt)       =
+   ============================================= */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto; 
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.modal-content {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 5px;
+  width: 450px;
+  position: relative;
+}
+.modal-content label {
+  display: block;
+  margin: 10px 0 5px;
+}
+.modal-content input[type="text"],
+.modal-content input[type="date"],
+.modal-content input[type="color"] {
+  margin-bottom: 15px;
+  display: block;
+}
+.modal-content h2 {
+  margin-bottom: 15px;
+}
+.modal-content button {
+  margin-top: 10px;
+}
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.close:hover {
+  color: #555;
+}
