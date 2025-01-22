@@ -1,9 +1,9 @@
 // main.js
 import {
-    tasks, projectList, currentLang, translations,
-    todayLineColor, showRemainingDays, showTotalDays
+    tasks, projectList, currentLang, currentTheme,
+    todayLineColor, showRemainingDays, showTotalDays,
+    translations, loadStateFromLocalStorage, saveAllToLocalStorage
   } from './state.js';
-  
   
   import {
     addTask, getProjectColor, deleteTask, toggleTaskCompletion,
