@@ -1,15 +1,17 @@
 // state.js
-export let tasks = [];
-export let projectList = [];
-export let currentLang = "de";
-export let currentTheme = "light";
-export let todayLineColor = "#FF0000";
-export let showRemainingDays = true;
-export let showTotalDays = true;
 
-/** i18n-Objekt (Deutsch, Englisch) */
-export const translations = {
-de: {
+export const state = {
+  tasks: [],
+  projectList: [],
+  currentLang: "de",
+  currentTheme: "light",
+  todayLineColor: "#FF0000",
+  showRemainingDays: true,
+  showTotalDays: true,
+
+  // Hier dein gesamtes translations-Objekt:
+  translations: {
+    de: {
       title: "Projektmanager",
       labelProject: "Projekt:",
       placeholderProjectSelect: "Projekt auswählen oder eingeben",
@@ -112,31 +114,34 @@ de: {
       // Projekt-Modal
       editProjectModalTitle: "Edit Project",
       placeholderProjectName: "New project name",
+    }
   }
 };
 
 /** Lädt den State aus localStorage (falls vorhanden) */
 export function loadStateFromLocalStorage() {
   const storedData = JSON.parse(localStorage.getItem('ganttData')) || {};
-  tasks = storedData.tasks || [];
-  projectList = storedData.projectList || [];
-  currentLang = storedData.language || "de";
-  currentTheme = storedData.theme || "light";
-  todayLineColor = storedData.todayLineColor || "#FF0000";
-  showRemainingDays = !!storedData.showRemainingDays;
-  showTotalDays = (storedData.showTotalDays !== false);
+
+  // Statt tasks = storedData.tasks || [] => state.tasks = ...
+  state.tasks = storedData.tasks || [];
+  state.projectList = storedData.projectList || [];
+  state.currentLang = storedData.language || "de";
+  state.currentTheme = storedData.theme || "light";
+  state.todayLineColor = storedData.todayLineColor || "#FF0000";
+  state.showRemainingDays = !!storedData.showRemainingDays;
+  state.showTotalDays = (storedData.showTotalDays !== false);
 }
 
 /** Speichert den aktuellen State ins localStorage */
 export function saveAllToLocalStorage() {
   const dataToSave = {
-    tasks,
-    projectList,
-    language: currentLang,
-    theme: currentTheme,
-    todayLineColor,
-    showRemainingDays,
-    showTotalDays
+    tasks: state.tasks,
+    projectList: state.projectList,
+    language: state.currentLang,
+    theme: state.currentTheme,
+    todayLineColor: state.todayLineColor,
+    showRemainingDays: state.showRemainingDays,
+    showTotalDays: state.showTotalDays
   };
   localStorage.setItem('ganttData', JSON.stringify(dataToSave));
 }
