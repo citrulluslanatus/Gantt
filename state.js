@@ -100,3 +100,28 @@ de: {
       placeholderProjectName: "New project name",
   }
 };
+
+export function loadStateFromLocalStorage() {
+  const storedData = JSON.parse(localStorage.getItem('ganttData')) || {};
+  tasks = storedData.tasks || [];
+  projectList = storedData.projectList || [];
+  currentLang = storedData.language || "de";
+  currentTheme = storedData.theme || "light";
+  todayLineColor = storedData.todayLineColor || "#FF0000";
+  showRemainingDays = !!storedData.showRemainingDays;
+  showTotalDays = (storedData.showTotalDays !== false);
+}
+
+/** Speichert den aktuellen State ins localStorage */
+export function saveAllToLocalStorage() {
+  const dataToSave = {
+    tasks,
+    projectList,
+    language: currentLang,
+    theme: currentTheme,
+    todayLineColor,
+    showRemainingDays,
+    showTotalDays
+  };
+  localStorage.setItem('ganttData', JSON.stringify(dataToSave));
+}
