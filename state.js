@@ -9,17 +9,109 @@ export let showTotalDays = true;
 
 /** i18n-Objekt (Deutsch, Englisch) */
 export const translations = {
-  de: {
-    title: "Projektmanager",
-    // ... dein kompletter i18n-Code ...
-    confirmClear: "Achtung! Alle Eingaben werden gelöscht. Fortfahren?",
-    // etc...
-  },
-  en: {
-    title: "Project Manager",
-    // ... ...
-    confirmClear: "Warning! This will clear all data. Continue?",
-    // ...
+de: {
+      title: "Projektmanager",
+      labelProject: "Projekt:",
+      placeholderProjectSelect: "Projekt auswählen oder eingeben",
+      placeholderProjectInput: "Neues Projekt eingeben",
+      labelTask: "Aufgabe:",
+      labelStart: "Startdatum:",
+      labelEnd: "Enddatum:",
+      btnAddTask: "Hinzufügen",
+
+      taskListHeading: "Aufgabenliste",
+      chartHeading: "Gantt-Chart",
+      settingsHeading: "Einstellungen",
+      themeLabel: "Farbschema:",
+      languageLabel: "Sprache:",
+      todayLineColorLabel: "Heute-Linienfarbe:",
+      showRemainingDaysLabel: "Verbleibende Tage anzeigen",
+      showTotalDaysLabel: "Gesamtzeit in Tagen anzeigen",
+
+      btnSave: "Speichern",
+      btnSaveAs: "Speichern unter...",
+      btnLoad: "Laden",
+      btnExportPNG: "Chart als PNG",
+      btnClearAll: "Neu",
+
+      editModalTitle: "Aufgabe bearbeiten",
+      editLabelProjectName: "Projekt:",
+      editLabelProjectColor: "Farbe:",
+      editLabelTaskName: "Aufgabe:",
+      editLabelStart: "Startdatum:",
+      editLabelEnd: "Enddatum:",
+
+      promptFilename: "Bitte Dateinamen eingeben",
+      confirmClear: "Achtung! Alle Eingaben werden gelöscht. Fortfahren?",
+      confirmDeleteTask: "Bist du sicher, dass du diese Aufgabe löschen möchtest?",
+      confirmDeleteProject: "Möchtest du wirklich das gesamte Projekt löschen (alle Aufgaben)?",
+
+      editButtonTitle: "Bearbeiten",
+      deleteButtonTitle: "Löschen",
+
+      formatDate: (date) => {
+        const d = String(date.getDate()).padStart(2, "0");
+        const m = String(date.getMonth() + 1).padStart(2, "0");
+        const y = date.getFullYear();
+        return `${d}.${m}.${y}`;
+      },
+      isMonday: (date) => date.getDay() === 1,
+
+      // Projekt-Modal
+      editProjectModalTitle: "Projekt bearbeiten",
+      placeholderProjectName: "Neuer Projektname",
+    },
+    en: {
+      title: "Project Manager",
+      labelProject: "Project:",
+      placeholderProjectSelect: "Select or enter a project",
+      placeholderProjectInput: "Enter a new project",
+      labelTask: "Task:",
+      labelStart: "Start date:",
+      labelEnd: "End date:",
+      btnAddTask: "Add",
+
+      taskListHeading: "Task List",
+      chartHeading: "Gantt Chart",
+      settingsHeading: "Settings",
+      themeLabel: "Color Scheme:",
+      languageLabel: "Language:",
+      todayLineColorLabel: "Today line color:",
+      showRemainingDaysLabel: "Show remaining days",
+      showTotalDaysLabel: "Show total days",
+
+      btnSave: "Save",
+      btnSaveAs: "Save as...",
+      btnLoad: "Load",
+      btnExportPNG: "Chart as PNG",
+      btnClearAll: "New",
+
+      editModalTitle: "Edit Task",
+      editLabelProjectName: "Project:",
+      editLabelProjectColor: "Color:",
+      editLabelTaskName: "Task:",
+      editLabelStart: "Start date:",
+      editLabelEnd: "End date:",
+
+      promptFilename: "Please enter a filename",
+      confirmClear: "Warning! This will clear all data. Continue?",
+      confirmDeleteTask: "Are you sure you want to delete this task?",
+      confirmDeleteProject: "Are you sure you want to delete this entire project (all tasks)?",
+
+      editButtonTitle: "Edit",
+      deleteButtonTitle: "Delete",
+
+      formatDate: (date) => {
+        const month = String(date.getMonth() + 1).padStart(2, "0");
+        const day = String(date.getDate()).padStart(2, "0");
+        const year = date.getFullYear();
+        return `${month}/${day}/${year}`;
+      },
+      isMonday: (date) => date.getDay() === 1,
+
+      // Projekt-Modal
+      editProjectModalTitle: "Edit Project",
+      placeholderProjectName: "New project name",
   }
 };
 
