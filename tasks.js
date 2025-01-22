@@ -4,7 +4,8 @@ import {
     saveAllToLocalStorage, translations
   } from './state.js';
   
-  import { rebuildProjectDropdown, renderTaskList, renderGantt } from './main.js';
+  import { rebuildProjectDropdown, renderTaskList } from './main.js';
+  import { renderGantt } from './gantt.js';
   
   /** Fügt einen neuen Task hinzu */
   export function addTask(newProject, selectedProject, newProjectColor, taskValue, startDate, endDate) {
