@@ -1,8 +1,6 @@
 // tasks.js
-import {
-    tasks, projectList, currentLang,
-    saveAllToLocalStorage, translations
-  } from './state.js';
+
+import { state, saveAllToLocalStorage } from "./state.js";
   
   import { rebuildProjectDropdown, renderTaskList } from './main.js';
   import { renderGantt } from './gantt.js';
