@@ -1,9 +1,6 @@
 // tasksFile.js
-import {
-    tasks, projectList, currentLang, currentTheme,
-    todayLineColor, showRemainingDays, showTotalDays,
-    translations, saveAllToLocalStorage
-  } from './state.js';
+import { state } from "./state.js";
+
   import { rebuildProjectDropdown, renderTaskList } from './main.js';
   import { renderGantt } from './gantt.js';
   
