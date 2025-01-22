@@ -1,8 +1,6 @@
 // gantt.js
-import {
-    tasks, projectList, currentLang, translations,
-    todayLineColor, showRemainingDays, showTotalDays
-  } from './state.js';
+
+import { state } from "./state.js";
   
   /** Rendert das Gantt-Diagramm */
   export function renderGantt() {
