@@ -220,7 +220,6 @@ import {
     const percent = (index / totalDays) * 100;
     todayLine.style.display = 'block';
     todayLine.style.left = `calc(${percent}% + 180px)`;
-    import { todayLineColor } from './state.js';
     todayLine.style.backgroundColor = todayLineColor;
   }
   
