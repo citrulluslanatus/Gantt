@@ -1,17 +1,15 @@
 // state.js
 
-export const state = {
-  tasks: [],
-  projectList: [],
-  currentLang: "de",
-  currentTheme: "light",
-  todayLineColor: "#FF0000",
-  showRemainingDays: true,
-  showTotalDays: true,
-
-  // Hier dein gesamtes translations-Objekt:
-  translations: {
-    de: {
+export let tasks = [];
+export let projectList = [];
+export let currentLang = "de";
+export let currentTheme = "light";
+export let todayLineColor = "#FF0000";
+export let showRemainingDays = true;
+export let showTotalDays = true;
+/** i18n-Objekt (Deutsch, Englisch) */
+export const translations = {
+de: {
       title: "Projektmanager",
       labelProject: "Projekt:",
       placeholderProjectSelect: "Projekt auswählen oder eingeben",
