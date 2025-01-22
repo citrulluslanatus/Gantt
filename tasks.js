@@ -14,6 +14,7 @@ import { state, saveAllToLocalStorage } from "./state.js";
         ? "Bitte alle Felder ausfüllen!"
         : "Please fill in all fields!");
       return;
+      saveAllToLocalStorage();
     }
     // Projekt evtl. anlegen
     if (newProject && !getProjectColor(newProject)) {
