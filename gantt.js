@@ -1,7 +1,7 @@
 // gantt.js
 import {
     tasks, projectList, currentLang, translations,
-    settodayLineColor, showRemainingDays, showTotalDays
+    setTodayLineColor, showRemainingDays, showTotalDays
   } from './state.js';
 
   /** Rendert das Gantt-Diagramm */
