@@ -1,7 +1,7 @@
 // main.js
 import {
     tasks, projectList, currentLang, currentTheme,
-    todayLineColor, showRemainingDays, showTotalDays,
+    setTodayLineColor, showRemainingDays, showTotalDays,
     translations, loadStateFromLocalStorage, saveAllToLocalStorage
   } from './state.js';
   
