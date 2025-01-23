@@ -1,9 +1,11 @@
 // main.js
 import {
-    tasks, projectList, currentLang, currentTheme,
-    setTodayLineColor, showRemainingDays, showTotalDays,
-    translations, loadStateFromLocalStorage, saveAllToLocalStorage
-  } from './state.js';
+  tasks, projectList, currentLang, currentTheme,
+  getTodayLineColor, 
+  setTodayLineColor,
+  showRemainingDays, showTotalDays,
+  translations, loadStateFromLocalStorage, saveAllToLocalStorage
+} from './state.js';
   
   import {
     addTask, getProjectColor, deleteTask, toggleTaskCompletion,
@@ -310,7 +312,7 @@ import {
     // 4) UI initialer Zustand
     themeSelect.value = currentTheme;
     languageSelect.value = currentLang;
-    todayLineColorInput.value = todayLineColor;
+    todayLineColorInput.value = getTodayLineColor(); 
     showRemainingDaysCheckbox.checked = showRemainingDays;
     showTotalDaysCheckbox.checked = showTotalDays;
   
