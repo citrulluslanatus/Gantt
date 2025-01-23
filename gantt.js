@@ -1,7 +1,7 @@
 // gantt.js
 import {
     tasks, projectList, currentLang, translations,
-    setTodayLineColor, showRemainingDays, showTotalDays
+    setTodayLineColor, getTodayLineColor, showRemainingDays, showTotalDays
   } from './state.js';
 
   /** Rendert das Gantt-Diagramm */
@@ -220,5 +220,5 @@ import {
     const percent = (index / totalDays) * 100;
     todayLine.style.display = 'block';
     todayLine.style.left = `calc(${percent}% + 180px)`;
-    todayLine.style.backgroundColor = todayLineColor;
+    todayLine.style.backgroundColor = getTodayLineColor();
   }
