@@ -4,7 +4,19 @@ export let tasks = [];
 export let projectList = [];
 export let currentLang = "de";
 export let currentTheme = "light";
-export let todayLineColor = "#FF0000";
+
+//color of Line
+let _todayLineColor = "#FF0000"; // NICHT exportieren
+
+export function getTodayLineColor() {
+  return _todayLineColor;
+}
+export function setTodayLineColor(newColor) {
+  _todayLineColor = newColor;
+}
+
+
+
 export let showRemainingDays = true;
 export let showTotalDays = true;
 export const translations = {
