@@ -2,7 +2,13 @@
   
   import { rebuildProjectDropdown, renderTaskList } from './main.js';
   import { renderGantt } from './gantt.js';
-  import { projectList } from './state.js';
+  import {
+  tasks,
+  projectList,
+  currentLang,
+  translations,
+  saveAllToLocalStorage
+} from './state.js';
   
   /** Fügt einen neuen Task hinzu */
   export function addTask(newProject, selectedProject, newProjectColor, taskValue, startDate, endDate) {
