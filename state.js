@@ -120,7 +120,7 @@ export function loadStateFromLocalStorage() {
   projectList = storedData.projectList || [];
   currentLang = storedData.language || "de";
   currentTheme = storedData.theme || "light";
-  todayLineColor = storedData.todayLineColor || "#FF0000";
+  setTodayLineColor(storedData.todayLineColor || "#FF0000");
   showRemainingDays = !!storedData.showRemainingDays;
   showTotalDays = (storedData.showTotalDays !== false);
 }
@@ -132,7 +132,7 @@ export function saveAllToLocalStorage() {
     projectList,
     language: currentLang,
     theme: currentTheme,
-    todayLineColor,
+    todayLineColor: getTodayLineColor(), 
     showRemainingDays,
     showTotalDays
   };
